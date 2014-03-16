@@ -1,7 +1,10 @@
 StoreApi::Application.routes.draw do
-  
+
   namespace :api do
     namespace :v1 do
+      resources :products, except: [:new, :edit]
+    end
+    namespace :v2 do
       resources :products, except: [:new, :edit]
     end
   end

@@ -1,12 +1,6 @@
 module Api
-	module V1
+	module V2
 		class ProductsController < ApplicationController
-			class Product < ::Product
-				def as_json(options = {})
-					super.merge(PN: name)
-				end
-			end
-
 
 			def index
 			    render json: Product.all
