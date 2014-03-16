@@ -1,6 +1,8 @@
 module Api
 	module V2
 		class ProductsController < ApplicationController
+			# http_basic_authenticate_with name: "admin", password: "secret"
+			before_action :restrict_access
 
 			def index
 			    render json: Product.all
@@ -8,6 +10,13 @@ module Api
 
 			def show
 				render json: Product.find(params[:id])	
+			end
+
+
+private
+			def restrict_access
+				api_key = ApiKey.find_by_access_token(params[:access_token])
+				head :unauthorized unless api_key 		
 			end
 
 			#respond_to :json

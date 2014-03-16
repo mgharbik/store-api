@@ -5,4 +5,9 @@ See versionist, rocket_pants gems
 
 call the srvice by cutl
 
-curl -H 'Accept: application/vnd.example.v1' http://localhost:3000/api/product
+curl -H 'Accept: application/vnd.example.v1' http://localhost:3000/api/products
+
+curl http://localhost:3000/api/products
+
+
+curl http://localhost:3000/api/products?access_token=df62da56230fee38a6b81424bac82b41
