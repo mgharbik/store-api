@@ -1,3 +1,8 @@
-== README
+== Versioning and Securing a rails-api
+
 
 See versionist, rocket_pants gems
+
+call the srvice by cutl
+
+curl -H 'Accept: application/vnd.example.v1' http://localhost:3000/api/product
