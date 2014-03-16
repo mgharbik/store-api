@@ -1,10 +1,12 @@
+require 'api_constraints'
+
 StoreApi::Application.routes.draw do
 
   namespace :api do
-    namespace :v1 do
+    scope module: :v1, constraints: ApiConstraints.new(version: 1) do
       resources :products, except: [:new, :edit]
     end
-    namespace :v2 do
+    scope module: :v2, constraints: ApiConstraints.new(version: 2, default: true) do
       resources :products, except: [:new, :edit]
     end
   end
